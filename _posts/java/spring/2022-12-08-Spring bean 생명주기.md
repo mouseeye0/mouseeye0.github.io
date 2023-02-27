@@ -2,8 +2,8 @@
 title: Spring 빈 생명주기
 author: mouseeye
 date: 2022-11-07 15:00:00 +0900
-categories: [IntelliJ]
-tags: [IntelliJ]
+categories: [Spring]
+tags: [Spring, Spring life cycle]
 ---
 
 ## Spring 빈 생명주기
