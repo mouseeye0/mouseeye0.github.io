@@ -22,7 +22,7 @@ tags: [data modeling]
 - RDBMS 에서 ***부모-자식 (Parent-Child) 관계*** 와 유사
 - 부모가 있어야 자식이 있는 구조
 - 부모 -> 자식, ***HAS A 관계***
-- ![주문 - 운송 관계](hash_hash.png)
+- ![주문 - 운송 관계](../../assets/img/redis/hash_hash.png)
 
 ```shell
 # Parent(주문)
@@ -54,7 +54,7 @@ tags: [data modeling]
 - RDBMS 에서 ***마스터-디테일 관계*** 와 유사
 - ***공통된 요소인 마스터 테이블***과 ***세부사항을 디테일 테이블***을 이용해서 구현 가능
 - ex) 주문 테이블은 주문번호, 고객명 등과 같은 공통적인 데이터를 담는 마스터 테이블과 주문의 상세 항목들을 담는 Detail 테이블로 구성됨
-- ![주문 - 주문 상세 관계](hash_list.png)
+- ![주문 - 주문 상세 관계](../../assets/img/redis/hash_list.png)
 ```shell
 # Master(주문공통)
 127.0.0.1:6379> hset order:20220802 customer_name 'assu' emp_no 1111 payment_type 'credit'
@@ -78,7 +78,7 @@ tags: [data modeling]
 
 ### List-List 데이터 모델
 - ***N-M 관계*** 에 해당
-- ![상품_카테고리.png](list_list.png)
+- ![상품_카테고리.png](../../assets/img/redis/list_list.png)
 
 ```shell
 127.0.0.1:6379> lpush product:p111 '{prod_name: apple, cate_no: c111}'
@@ -96,7 +96,7 @@ tags: [data modeling]
 - RDBMS 에서 ***계층형 관계*** (Tree Structure) 에 해당
 - Self-Reference 관계
 - ex) 사원 테이블은 사원 번호, 상관 사원번호의 컬럼으로 구성되어 있으며, 두개의 값에 의해 상호 참조 가능한 구조이다.
-- ![Reply](set_list.png)
+- ![Reply](../../assets/img/redis/set_list.png)
 ```shell
 127.0.0.1:6379> sadd reply:1 'id:1, upper_id:0, content:test111' 'id:2, upper_id:1, content:test111-1'
 
